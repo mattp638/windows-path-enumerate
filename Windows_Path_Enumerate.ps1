@@ -565,3 +565,10 @@ if ($RestoreBackup){
 if ($DeleteLogFile){
     Remove-Item $LogName -Force -ErrorAction "SilentlyContinue"
 }
+
+# Store the output in a variable
+$UnquotedServicePathResult = $ScriptExecutionResult
+ 
+ 
+#Outputs to a NinjaOne custom field.
+Ninja-Property-Set unquotedServicePathReport $UnquotedServicePathResult
